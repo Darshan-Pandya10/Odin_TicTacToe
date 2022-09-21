@@ -11,44 +11,51 @@
 body{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     width: 100vw;
     height: 100vh;
     font-family: 'DM Sans', sans-serif;
+    position: relative;
 }
 
 .userOptions{
-
-    width: 20rem;
-    height: 5rem;
+    width: 100vw;
+    height: 8rem;
     border: 1px solid black;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #283149;
 }
 
 .vsAI,.vsPlayer{
     width: 8rem;
     padding: 1rem;
-    font-size: 14px;
-    font-weight: 500;
     border: none;
     outline: none;
     cursor: pointer;
+    background-color: #F73859;
+    color: #DBEDF3;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .board{
     display: grid;
     grid-template-columns: repeat(3,var(--cell-size));
     margin: 2rem;
+    background-color: #404B69;
 }
 
 .cell{
     width: var(--cell-size);
     height: var(--cell-size);
-    border: 1px solid black;
+    border: 1px solid #DBEDF3;
     display: flex;
     flex-direction: row;
     justify-items: center;
@@ -102,9 +109,9 @@ body{
 
 .messagebox{
     width: 20rem;
-    height: 8rem;
+    height: 10rem;
     /* border: 1px solid black; */
-    margin: 1rem;
+    margin: 1rem 0rem;
     display: none;
 }
 
@@ -112,25 +119,30 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;}
+    align-items: center;
+    padding-top: 1rem;
+}
 
 .restart{
     width: 8rem;
     padding: 1rem;
     outline: none;
     border: none;
-    background-color: black;
-    color: white;
+    background-color: #F73859;
+    color: #DBEDF3;
     font-size: 14px;
     font-weight: 600;
     margin: 0rem;
     letter-spacing: 0.1rem;
-    display: block;
+    display: none;
     cursor: pointer;
 }
 
+.showRestartButton{
+    display: block;
+}
+
 p{
-    margin-bottom: 1rem;
     font-size: 20px;
     font-weight: 600;
     letter-spacing: 0.1rem;

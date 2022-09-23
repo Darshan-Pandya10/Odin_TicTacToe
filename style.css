@@ -19,18 +19,25 @@ body{
     position: relative;
 }
 
-.userOptions{
+header{
     width: 100vw;
     height: 8rem;
-    border: 1px solid black;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content:center;
     align-items: center;
     position: absolute;
     top: 0;
     left: 0;
     background-color: #283149;
+    color: #DBEDF3;
+}
+
+h1{
+    letter-spacing: 0.4rem;
+    font-size: 50px;
+    font-weight: 700;
+    text-shadow: 2px 2px #F73859;
 }
 
 .vsAI,.vsPlayer{
@@ -45,77 +52,35 @@ body{
     font-weight: 600;
 }
 
-.board{
-    display: grid;
-    grid-template-columns: repeat(3,var(--cell-size));
-    margin: 2rem;
-    background-color: #404B69;
-}
-
-.cell{
-    width: var(--cell-size);
-    height: var(--cell-size);
-    border: 1px solid #DBEDF3;
+.Box{
     display: flex;
     flex-direction: row;
-    justify-items: center;
+    justify-content: space-around;
     align-items: center;
-    justify-content: center;
-    position: relative;
-    cursor: pointer;
+    border: 1px solid black;
+    width: 45rem;
+    height: 10rem;
 }
 
-/* making x and o */
-
-.cell.x::before,
-.cell.x::after{
-
-    content: '';
-    position: absolute;
-    width: calc(var(--cell-size) * 0.10);
-    height: calc(var(--cell-size)* 0.8);
-    background-color: black;
+.x-button,.circle-button{
+    width: 10rem;
+    padding: 1rem;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 1rem;
 }
 
-.cell.x::before{
-    transform: rotate(45deg);
-}
-
-.cell.x::after{
-    transform: rotate(-45deg);
-}
-
-.cell.circle::before,
-.cell.circle::after{
-
-    content: '';
-    position: absolute;
-    background-color: black;
-    border-radius: 50%;
-}
-
-.cell.circle::before{
-     width: calc(var(--cell-size) * 0.8);
-     height: calc(var(--cell-size)* 0.8);
-
-}
-
-.cell.circle::after{
-    width: calc(var(--cell-size) * 0.6);
-    height: calc(var(--cell-size)* 0.6);
-    background-color: white;
-
-}
 
 .messagebox{
     width: 20rem;
     height: 10rem;
-    /* border: 1px solid black; */
     margin: 1rem 0rem;
-    display: none;
+    visibility: hidden;
 }
 
 .showResult{
+    visibility: visible;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -146,6 +111,69 @@ p{
     font-size: 20px;
     font-weight: 600;
     letter-spacing: 0.1rem;
+}
+
+.board{
+    display: grid;
+    grid-template-columns: repeat(3,var(--cell-size));
+    margin: 2rem;
+    background-color: #283149;
+}
+
+.cell{
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 1px solid #DBEDF3;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+}
+
+/* making x and o */
+
+.cell.x::before,
+.cell.x::after{
+
+    content: '';
+    position: absolute;
+    width: calc(var(--cell-size) * 0.10);
+    height: calc(var(--cell-size)* 0.8);
+    background-color: black;
+    background-color: white;
+}
+
+.cell.x::before{
+    transform: rotate(45deg);
+}
+
+.cell.x::after{
+    transform: rotate(-45deg);
+}
+
+.cell.circle::before,
+.cell.circle::after{
+
+    content: '';
+    position: absolute;
+    background-color: #232931;
+    background-color: #DCD6F7;
+    border-radius: 50%;
+}
+
+.cell.circle::before{
+     width: calc(var(--cell-size) * 0.8);
+     height: calc(var(--cell-size)* 0.8);
+
+}
+
+.cell.circle::after{
+    width: calc(var(--cell-size) * 0.6);
+    height: calc(var(--cell-size)* 0.6);
+    background-color: white;
 }
 
 /* borders */

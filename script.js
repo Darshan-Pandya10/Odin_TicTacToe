@@ -18,10 +18,12 @@ const winningCombinationArray = [
     [2,4,6],
 ];
 
-restart.addEventListener('click',versusPlayer)
 
 
 function versusPlayer(){
+
+    restart.addEventListener('click',versusPlayer)
+
 
    restart.addEventListener('click' , () => {
     restart.classList.remove('showRestartButton')
@@ -46,7 +48,7 @@ function versusPlayer(){
     const cell = e.target;
     let whosTurn = currentClass ? x_class : circle_class;
     cell.classList.add(whosTurn);
-    showTern.innerText = `${whosTurn} terns completed`;
+    showTern.innerText = `${whosTurn} terns completed.`;
     swapterns();
 
     if(winnerCheck(whosTurn)){
